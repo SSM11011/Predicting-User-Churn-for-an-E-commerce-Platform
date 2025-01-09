@@ -33,6 +33,158 @@ The research paper emphasizes that retention management isn’t just about predi
 - Leveraging both traditional statistical methods and modern machine learning tools (like random forests and deep learning) to analyze structured and unstructured data.
 - Using insights not only to retain customers but to enhance their lifetime value by understanding why they’re at risk and tailoring retention campaigns accordingly.
 
+# Feature Rationale for Churn Prediction
+
+## **1. Recency, Frequency, and Monetary (RFM) Metrics**
+### **Recency**: Days since the last purchase
+- **Rationale**: Indicates how recently a user made a purchase. Customers with recent purchases are more likely to remain engaged.
+
+### **Frequency**: Number of purchases
+- **Rationale**: Reflects how often a customer purchases, which helps identify loyal or habitual buyers.
+
+### **Monetary**: Total amount spent
+- **Rationale**: Measures customer value based on spending. High-spending customers are key contributors to revenue.
+
+---
+
+## **2. Temporal Features**
+### **First interaction**: Timestamp of the first recorded event
+- **Rationale**: Helps understand when the user started interacting with the platform.
+
+### **Last interaction**: Timestamp of the last recorded event
+- **Rationale**: Indicates whether the user is still active or has churned.
+
+### **Activity days**: Number of unique days a user was active
+- **Rationale**: Measures engagement consistency and user activity spread over time.
+
+### **Inactivity period**: Days between the first and last interaction
+- **Rationale**: Helps understand how stretched or condensed the user’s engagement is over time.
+
+### **Customer lifespan**: Total days between the first and last interaction
+- **Rationale**: Captures how long a user has been active on the platform.
+
+### **Days since last interaction**: Days since the last recorded event
+- **Rationale**: Indicates how recently the user interacted with the platform, important for churn prediction.
+
+### **Interaction per day**: Distinct products interacted with per active day
+- **Rationale**: Measures how engaged a user is during their active days, reflecting intensity of usage.
+
+---
+
+## **3. Time Preferences**
+### **Morning, Afternoon, Evening, and Night shopper**
+- **Rationale**: Understanding time preferences helps personalize engagement strategies (e.g., targeting users with offers at their active times).
+
+### **Weekday and Weekend shopper**
+- **Rationale**: Identifies whether users are more active during workdays or leisure time, aiding in promotional planning.
+
+---
+
+## **4. Purchase Acceleration Metrics**
+### **Average time between purchases**
+- **Rationale**: Helps identify the user’s purchasing cycle, enabling predictions of when they are likely to purchase again.
+
+---
+
+## **5. Session-Based Metrics**
+### **Session count**: Number of unique sessions
+- **Rationale**: Indicates how often the user visits the platform, a proxy for engagement.
+
+### **Average session duration**: Mean duration of sessions
+- **Rationale**: Reflects how long users stay engaged per session, highlighting deeper engagement.
+
+### **Session variance**: Variance in session durations
+- **Rationale**: Captures consistency or variability in user engagement patterns.
+
+### **Total events**: Total number of events in all sessions
+- **Rationale**: Measures overall engagement level.
+
+### **Bounce rate**: Proportion of sessions with only one event
+- **Rationale**: Indicates whether users engage deeply or just visit briefly (low engagement).
+
+### **Average value density**: Revenue per minute of session duration
+- **Rationale**: Combines engagement duration with monetary value to identify high-value users efficiently.
+
+---
+
+## **6. Product and Brand Preferences**
+### **Most viewed brand and category**
+- **Rationale**: Identifies brands/categories the user is most interested in, useful for recommendation systems.
+
+### **Top purchased category**
+- **Rationale**: Highlights user preferences for categories they purchase the most, aiding in targeted marketing.
+
+---
+
+## **7. Brand Loyalty**
+### **Brand loyalty score**
+- **Rationale**: Measures how committed a user is to a specific brand, useful for identifying loyalists who can be targeted for exclusive offers.
+
+---
+
+## **8. Behavioral Patterns**
+### **Views, Carts, and Purchases**
+- **Rationale**: Basic metrics to capture the volume of each user action, essential for behavioral analysis.
+
+### **View-to-cart ratio**
+- **Rationale**: Measures how effectively the platform converts views into cart additions.
+
+### **Cart-to-purchase ratio**
+- **Rationale**: Tracks conversion from intent (cart) to action (purchase), highlighting potential drop-offs in the buying process.
+
+---
+
+## **9. Browse-to-Purchase Behavior**
+### **Average views before purchase**
+- **Rationale**: Helps understand the user’s decision-making process and effort before purchasing.
+
+### **Session conversion rate**
+- **Rationale**: Measures how often sessions lead to purchases, reflecting session effectiveness.
+
+---
+
+## **10. Price Sensitivity and Patterns**
+### **Price variance**
+- **Rationale**: Indicates how much variability exists in the user’s price preferences.
+
+### **Price range**
+- **Rationale**: Captures the spread of prices the user is comfortable interacting with, helping identify high- or low-budget users.
+
+### **Average price viewed and purchased**
+- **Rationale**: Highlights user behavior with respect to pricing during browsing and buying.
+
+### **High- and low-value interactions**
+- **Rationale**: Indicates the extent to which a user interacts with products above or below their typical price range, reflecting price sensitivity.
+
+### **Price sensitivity score**
+- **Rationale**: Ratio of purchased to viewed prices indicates whether the user leans towards higher-value or lower-value purchases compared to their browsing habits.
+
+---
+
+## **11. Cart Abandonment Metrics**
+### **Cart abandonment rate**
+- **Rationale**: Measures the proportion of unconverted carts, reflecting potential user hesitation or dissatisfaction.
+
+---
+
+## **12. Product Interaction Patterns**
+### **Distinct products, brands, and categories**
+- **Rationale**: Measures the diversity of the user’s interactions, useful for understanding breadth of interest.
+
+### **Category diversity**
+- **Rationale**: Number of unique categories interacted with, indicating exploratory behavior.
+
+### **Category exploration index**
+- **Rationale**: Normalized measure of category diversity relative to total interactions, capturing exploration depth.
+
+### **Repeat view rate**
+- **Rationale**: Measures how often users revisit the same products, indicating strong interest or uncertainty.
+
+---
+
+These features collectively provide a comprehensive view of user behavior, preferences, engagement, and purchasing patterns. Each feature enables actionable insights, from personalized marketing to churn prediction, and builds a strong foundation for predictive modeling.
+
+
 ## Model Selection and Training Process
 
 ### Data Preprocessing
