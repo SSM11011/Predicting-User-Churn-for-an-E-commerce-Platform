@@ -57,7 +57,25 @@ Parameters explored:
 
 The best parameters found through grid search were:
 ```python
-best_params = grid_search.best_params_  # Actual values will be populated during training
+param_grid = {
+    'depth': [3, 4, 5, 6],
+    'learning_rate': [0.01, 0.05, 0.1],
+    'n_estimators': [20, 25, 30, 40]
+}
+
+cat_boost_model = CatBoostClassifier(task_type='CPU', silent=True)
+
+grid_search = GridSearchCV(
+    estimator=cat_boost_model,
+    param_grid=param_grid,
+    cv=3,  # 3-fold cross-validation
+    scoring='roc_auc',
+    verbose=1,
+    error_score='raise'
+)
+
+grid_search.fit(X, y, cat_features=categorical_cols)
+best_params = grid_search.best_params_
 ```
 
 ## Model Performance Metrics
