@@ -1,5 +1,21 @@
 # Customer Churn Analysis
 
+## Churn
+### Goal
+The task involves analyzing user activity data (like views, adding items to the cart, and purchases) from an e-commerce platform. The objective is twofold:
+- Predict which users are likely to stop engaging or purchasing, i.e., churn.
+- Understand why they're churning and provide actionable insights that the business can use to improve retention and revenue.
+
+### Churn Definition
+No site visit since last 30 days and customer lifespan is less than days from last interaction
+
+### Interpretation from the research paper
+The research paper emphasizes that retention management isn’t just about predicting churn but also about crafting targeted strategies that address the reasons behind it. This involves:
+- Defining churn: Moving beyond a simple yes/no categorization to identifying meaningful patterns in user behavior.
+- Feature creation: Capturing elements like transaction recency, frequency, and patterns that predict churn while incorporating customer demographics and browsing behavior.
+- Methodology: Leveraging both traditional statistical methods and modern machine learning tools (like random forests and deep learning) to analyze structured and unstructured data.
+- Actionable strategies: Using insights not only to retain customers but to enhance their lifetime value by understanding why they’re at risk and tailoring retention campaigns accordingly.
+
 ## Model Selection and Training Process
 
 ### Data Preprocessing
@@ -8,14 +24,14 @@
 - No manual encoding was required due to CatBoost's native categorical feature support
 
 ### Model Selection
-We chose CatBoostClassifier for this analysis due to:
+I chose CatBoostClassifier for this analysis due to:
 - Native handling of categorical features without need for encoding
 - Robust performance on imbalanced datasets
 - Built-in support for feature importance analysis
 - Efficient training with GPU acceleration capability
 
 ### Hyperparameter Tuning
-We implemented a systematic grid search approach using 3-fold cross-validation to find optimal parameters:
+I implemented a systematic grid search approach using 3-fold cross-validation to find optimal parameters:
 
 Parameters explored:
 - Tree depth: [3, 4, 5, 6]
@@ -52,7 +68,7 @@ The model's performance was evaluated using multiple metrics:
 ## Feature Importance Analysis
 
 ### SHAP Values
-We used SHAP (SHapley Additive exPlanations) values to understand feature importance:
+I used SHAP (SHapley Additive exPlanations) values to understand feature importance:
 - Provides both global and local feature importance
 - Shows how each feature contributes to individual predictions
 - Accounts for feature interactions
