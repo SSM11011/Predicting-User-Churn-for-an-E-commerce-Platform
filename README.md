@@ -33,7 +33,7 @@ The research paper emphasizes that retention management isn’t just about predi
 - Leveraging both traditional statistical methods and modern machine learning tools (like random forests and deep learning) to analyze structured and unstructured data.
 - Using insights not only to retain customers but to enhance their lifetime value by understanding why they’re at risk and tailoring retention campaigns accordingly.
 
-# Feature Rationale for Churn Prediction
+## Feature Rationale for Churn Prediction
 
 ## **1. Recency, Frequency, and Monetary (RFM) Metrics**
 ### **Recency**: Days since the last purchase
