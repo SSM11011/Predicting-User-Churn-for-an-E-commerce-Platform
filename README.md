@@ -5,7 +5,7 @@
 The task involves analyzing user activity data (like views, adding items to the cart, and purchases) from an e-commerce platform. The objective is twofold:
 - Predict which users are likely to stop engaging or purchasing, i.e., churn.
 - Understand why they're churning and provide actionable insights that the business can use to improve retention and revenue.
-
+                        
 ### Churn Definition
 No site visit since last 30 days AND customer lifespan is less than days from last interaction
 
@@ -17,21 +17,21 @@ Including customer lifespan adds crucial context - newer customers might have di
 Using site visits rather than just purchases captures early warning signs, since dropping engagement often precedes purchase churn. The 30-day inactivity threshold makes perfect sense for e-commerce. Unlike subscription businesses where churn is crystal clear (they cancel), retail shopping has natural gaps. Think about it - even loyal customers don't typically shop every week. The 30-day window captures this natural shopping cycle while being short enough to let you intervene before losing them completely.
 
 The second part - checking if their lifespan is shorter than days since last interaction - is best suited for handling edge cases because:
-It automatically adapts to each customer's unique shopping pattern. If someone typically shops every 2 weeks, a 30-day gap is concerning. If they shop quarterly, maybe not so much.
-It helps distinguish between true churners and seasonal shoppers (like holiday-only customers)
-It naturally handles new vs. established customers differently. A 30-day gap from a 2-year loyal customer means something very different than the same gap from a one-time buyer.
+- It automatically adapts to each customer's unique shopping pattern. If someone typically shops every 2 weeks, a 30-day gap is concerning. If they shop quarterly, maybe not so much.
+- It helps distinguish between true churners and seasonal shoppers (like holiday-only customers)
+- It naturally handles new vs. established customers differently. A 30-day gap from a 2-year loyal customer means something very different than the same gap from a one-time buyer.
 
 For predictive modeling, this definition gives us clean labels while avoiding some classic pitfalls:
-Not too sensitive (won't flag normal shopping gaps as churn)
-Not too lenient (won't wait until it's too late to intervene)
-Accounts for user heterogeneity (different shopping frequencies)
+- Not too sensitive (won't flag normal shopping gaps as churn)
+- Not too lenient (won't wait until it's too late to intervene)
+- Accounts for user heterogeneity (different shopping frequencies)
 
 ### Interpretation from the research paper
 The research paper emphasizes that retention management isn’t just about predicting churn but also about crafting targeted strategies that address the reasons behind it. This involves:
-- Defining churn: Moving beyond a simple yes/no categorization to identifying meaningful patterns in user behavior.
-- Feature creation: Capturing elements like transaction recency, frequency, and patterns that predict churn while incorporating customer demographics and browsing behavior.
-- Methodology: Leveraging both traditional statistical methods and modern machine learning tools (like random forests and deep learning) to analyze structured and unstructured data.
-- Actionable strategies: Using insights not only to retain customers but to enhance their lifetime value by understanding why they’re at risk and tailoring retention campaigns accordingly.
+- Moving beyond a simple yes/no categorization to identifying meaningful patterns in user behavior.
+- Capturing elements like transaction recency, frequency, and patterns that predict churn while incorporating customer demographics and browsing behavior.
+- Leveraging both traditional statistical methods and modern machine learning tools (like random forests and deep learning) to analyze structured and unstructured data.
+- Using insights not only to retain customers but to enhance their lifetime value by understanding why they’re at risk and tailoring retention campaigns accordingly.
 
 ## Model Selection and Training Process
 
