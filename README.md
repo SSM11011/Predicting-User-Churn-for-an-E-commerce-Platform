@@ -7,7 +7,24 @@ The task involves analyzing user activity data (like views, adding items to the 
 - Understand why they're churning and provide actionable insights that the business can use to improve retention and revenue.
 
 ### Churn Definition
-No site visit since last 30 days and customer lifespan is less than days from last interaction
+No site visit since last 30 days AND customer lifespan is less than days from last interaction
+
+### Rationale behind churn definition
+My churn definition captures both behavioral signals: inactivity and historical engagement.
+
+The 30-day window is a good sweet spot - long enough to filter out normal purchase cycles but short enough to enable timely interventions
+Including customer lifespan adds crucial context - newer customers might have different expected visit patterns than long-term loyal ones
+Using site visits rather than just purchases captures early warning signs, since dropping engagement often precedes purchase churn. The 30-day inactivity threshold makes perfect sense for e-commerce. Unlike subscription businesses where churn is crystal clear (they cancel), retail shopping has natural gaps. Think about it - even loyal customers don't typically shop every week. The 30-day window captures this natural shopping cycle while being short enough to let you intervene before losing them completely.
+
+The second part - checking if their lifespan is shorter than days since last interaction - is best suited for handling edge cases because:
+It automatically adapts to each customer's unique shopping pattern. If someone typically shops every 2 weeks, a 30-day gap is concerning. If they shop quarterly, maybe not so much.
+It helps distinguish between true churners and seasonal shoppers (like holiday-only customers)
+It naturally handles new vs. established customers differently. A 30-day gap from a 2-year loyal customer means something very different than the same gap from a one-time buyer.
+
+For predictive modeling, this definition gives us clean labels while avoiding some classic pitfalls:
+Not too sensitive (won't flag normal shopping gaps as churn)
+Not too lenient (won't wait until it's too late to intervene)
+Accounts for user heterogeneity (different shopping frequencies)
 
 ### Interpretation from the research paper
 The research paper emphasizes that retention management isn’t just about predicting churn but also about crafting targeted strategies that address the reasons behind it. This involves:
